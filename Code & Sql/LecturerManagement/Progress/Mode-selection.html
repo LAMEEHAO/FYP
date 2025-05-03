@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mode Selection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+    }
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #daf7c3;
+      padding: 20px;
+      text-align: center;
+      border-radius: 16px;
+      box-shadow: 5px 5px 0 #72b840;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .selected {
+      border: 3px solid #4CAF50;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    textarea {
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 100%;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+      height: 100px;
+      resize: vertical;
+    }
+
+    textarea:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    textarea:not(:focus) {
+      border-color: #ccc;
+    }
+
+    .clear-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background-color: transparent;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: #4CAF50;
+    }
+
+    .clear-btn:hover {
+      color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Mode Selection</h1>
+
+    <!-- Room Type Section -->
+    <div class="section">
+      <h2>Room Type</h2>
+      <div class="grid" id="roomTypes">
+        <div class="card" onclick="selectCard(this, 'roomTypes')">Public Room</div>
+        <div class="card" onclick="selectCard(this, 'roomTypes')">Private Room</div>
+      </div>
+    </div>
+
+    <!-- Player Mode Section -->
+    <div class="section">
+      <h2>Player Mode</h2>
+      <div class="grid" id="playerModes">
+        <div class="card" onclick="selectCard(this, 'playerModes')">Multiplayer</div>
+        <div class="card" onclick="selectCard(this, 'playerModes')">Solo Mode</div>
+      </div>
+    </div>
+
+    <!-- Difficulty Level Section -->
+    <div class="section">
+      <h2>Difficulty Level</h2>
+      <div class="grid" id="difficultyLevels">
+        <div class="card" onclick="selectCard(this, 'difficultyLevels')">Easy</div>
+        <div class="card" onclick="selectCard(this, 'difficultyLevels')">Medium</div>
+        <div class="card" onclick="selectCard(this, 'difficultyLevels')">Hard</div>
+      </div>
+    </div>
+
+    <!-- Quiz Description Textarea -->
+    <div class="section">
+      <h2>Quiz Description</h2>
+      <div class="input-container">
+        <textarea id="quizDescription" placeholder="Enter a description for the quiz" onfocus="focusInput(this)" onblur="blurInput(this)"></textarea>
+        <button type="button" class="clear-btn" onclick="clearInput('quizDescription')">×</button>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button onclick="submitSelection()">Save</button>
+    </div>
+  </div>
+
+  <script>
+    function selectCard(element, groupId) {
+      const group = document.getElementById(groupId);
+      const cards = group.getElementsByClassName("card");
+      for (let card of cards) {
+        card.classList.remove("selected");
+      }
+      element.classList.add("selected");
+    }
+
+    function focusInput(element) {
+      element.style.backgroundColor = "#f4f4f4";
+    }
+
+    function blurInput(element) {
+      element.style.backgroundColor = "";
+    }
+
+    function clearInput(inputId) {
+      document.getElementById(inputId).value = "";
+    }
+
+    function submitSelection() {
+      const selectedRoomType = document.querySelector("#roomTypes .selected");
+      const selectedPlayerMode = document.querySelector("#playerModes .selected");
+      const selectedDifficultyLevel = document.querySelector("#difficultyLevels .selected");
+      const quizDescription = document.getElementById("quizDescription").value;
+
+      if (!selectedRoomType || !selectedPlayerMode || !selectedDifficultyLevel || !quizDescription) {
+        alert("Please select all options and enter a quiz description.");
+        return;
+      }
+
+      const roomType = selectedRoomType.innerText;
+      const playerMode = selectedPlayerMode.innerText;
+      const difficultyLevel = selectedDifficultyLevel.innerText;
+
+      // Store data in localStorage
+      localStorage.setItem('roomType', roomType);
+      localStorage.setItem('playerMode', playerMode);
+      localStorage.setItem('difficultyLevel', difficultyLevel);
+      localStorage.setItem('quizDescription', quizDescription);
+
+      // Save to server
+      fetch('saveModeSelection.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `roomType=${encodeURIComponent(roomType)}&playerMode=${encodeURIComponent(playerMode)}&difficultyLevel=${encodeURIComponent(difficultyLevel)}&quizDescription=${encodeURIComponent(quizDescription)}`
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data);
+        // Redirect to quiz overview page
+        window.location.href = "quiz-overview.html";
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Failed to save mode selection.');
+      });
+    }
+  </script>
+</body>
+</html>

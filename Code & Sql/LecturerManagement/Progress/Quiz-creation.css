@@ -1,0 +1,281 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  header {
+    display: flex;
+    justify-content: center; /* Center the nav content */
+    align-items: center;
+    padding: 2rem 3rem; /* Updated padding */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .logo {
+    font-weight: bold;
+    color: #3a913f;
+    font-size: 1.5rem;
+    position: absolute; /* Keep logo on the left */
+    left: 3rem; /* Align with padding */
+  }
+  
+  .logo a {
+    color: #3a913f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .logo a:hover {
+    text-decoration: none;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center; /* Center the nav ul */
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  main {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #222;
+  }
+  
+  .quiz-box {
+    background-color: #daf7c3;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 8px 8px 0 #72b840;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+  
+  .quiz-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .quiz-header input[type="text"],
+  .quiz-header input[type="number"] {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .quiz-options input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 100px;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .mode-switch {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .mode-switch button {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .mode-switch .active {
+    background-color: #72b840;
+    color: white;
+    border: none;
+  }
+  
+  .add-question {
+    display: block;
+    margin: 2rem auto;
+    background-color: #72b840;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .subject-control {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .subject-control select {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #72b840;
+  }
+  
+  .subject-control input,
+  .subject-control button {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #72b840;
+    background-color: #e6f7d9;
+  }
+  
+  .done-button {
+    display: block;
+    margin: 1rem auto;
+    background-color: #3a913f;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, opacity 0.3s ease;
+  }
+  
+  .subject-control button {
+    cursor: pointer;
+  }
+  
+  /* General button styles */
+  button {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+  }
+  
+  /* Hover effect */
+  button:hover {
+    background-color: #5cae60;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Active (click) effect */
+  button:active {
+    transform: scale(0.96);
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select,
+  textarea {
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input[type="text"]:hover,
+  input[type="number"]:hover,
+  select:hover,
+  textarea:hover {
+    border-color: #72b840;
+    box-shadow: 0 0 5px rgba(114, 184, 64, 0.3);
+  }
+  
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #3a913f;
+    outline: none;
+    box-shadow: 0 0 8px rgba(58, 145, 63, 0.4);
+  }
+  
+  .correct-answer-wrapper {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .correct-answer-wrapper label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .correct-answer-text {
+    min-height: 80px;
+    resize: vertical;
+    padding: 3px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+  }
+  
+  .quiz-title-control {
+    display: flex;
+    justify-content: center;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .quiz-title-control input {
+    width: 33%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #72b840;
+    background-color: #e6f7d9;
+    font-size: 1rem;
+  }
+  
+  .quiz-title-control input:focus {
+    border-color: #3a913f;
+    outline: none;
+    box-shadow: 0 0 8px rgba(58, 145, 63, 0.4);
+  }
+  
+  /* Styles moved from inline HTML */
+  .loading::after {
+    content: " ⏳";
+  }
+  
+  .disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  #subject-loading {
+    display: none;
+    margin-left: 10px;
+    color: #888;
+  }

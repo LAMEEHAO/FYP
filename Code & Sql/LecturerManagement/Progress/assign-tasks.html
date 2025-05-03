@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assign Tasks</title>
+  <link rel="stylesheet" href="assign-tasks.css">
+  <script defer src="assign-tasks.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="lecturer-dashboard.html">Lecturer Management</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Quizzes</a></li>
+        <li><a href="#">Materials</a></li>
+        <li><a href="#">Leaderboard</a></li> 
+        <li><a href="#">Study Timer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>🎓 Assign Tasks</h1>
+
+    <section class="task-section">
+      <div class="assign-task">
+        <select id="quiz-select">
+          <option value="">Select Quiz</option>
+          <!-- Populated by JS -->
+        </select>
+        <select id="student-select">
+          <option value="">Select Student</option>
+          <!-- Populated by JS -->
+        </select>
+        <textarea id="task-description" placeholder="Task Description"></textarea>
+        <select id="task-type">
+          <option value="revision">Revision Quiz</option>
+          <option value="daily">Daily Quiz</option>
+          <option value="exam">Exam Quiz</option>
+        </select>
+        <button onclick="assignTask()">➕ Assign Task</button>
+      </div>
+
+      <div class="task-list">
+        <h2>Assigned Tasks</h2>
+        <div id="task-list" class="task-list-container">
+          <!-- Task items will be displayed here -->
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

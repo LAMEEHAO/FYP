@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade Results</title>
+  <link rel="stylesheet" href="grade-results.css">
+  <script defer src="grade-results.js"></script>
+  <style>
+    .logo {
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .logo:hover {
+      color: #2a7a2f;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="window.location.href='lecturer-dashboard.html'">Lecturer Management</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Quizzes</a></li>
+        <li><a href="#">Materials</a></li>
+        <li><a href="#">Leaderboard</a></li>
+        <li><a href="#">Study Timer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>📊 Grade Results</h1>
+
+    <section class="materials-section">
+      <div id="results-list" class="materials-list">
+        <!-- Grade cards go here -->
+      </div>
+
+      <div class="add-material">
+        <input type="text" id="student-name" placeholder="Student Name" />
+        <select id="quiz-title" required>
+          <option value="" disabled selected>Select Quiz</option>
+        </select>
+        <input type="number" id="grade-score" placeholder="Grade %" />
+        <button onclick="addResult()">➕ Add Result</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

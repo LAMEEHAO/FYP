@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learning Materials</title>
+  <link rel="stylesheet" href="learning-Materials.css">
+  <script defer src="learning-Materials.js"></script>
+  <style>
+    .logo {
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .logo:hover {
+      color: #2a7a2f;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="window.location.href='lecturer-dashboard.html'">Lecturer Management</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Quizzes</a></li>
+        <li><a href="#">Materials</a></li>
+        <li><a href="#">Leaderboard</a></li>
+        <li><a href="#">Study Timer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>📚 Learning Materials</h1>
+
+    <section class="materials-section">
+      <div id="materials-list" class="materials-list">
+        <!-- Cards will be added here -->
+      </div>
+
+      <div class="add-material">
+        <input type="text" id="material-title" placeholder="Title" />
+        <input type="url" id="material-link" placeholder="Material Link (PDF, Video, etc)" />
+        <select id="quiz-select">
+          <option value="">Select Quiz (Optional)</option>
+          <!-- Quiz options will be populated by JS -->
+        </select>
+        <button onclick="addMaterial()">➕ Add Material</button>
+        <button id="delete-material-btn" onclick="handleDeleteClick()">🗑️</button>
+        <button id="select-all-btn" onclick="toggleSelectAll()" style="display: none;">Select All</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

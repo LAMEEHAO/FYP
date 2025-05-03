@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assign Tasks</title>
+  <link rel="stylesheet" href="Quiz-management.css">
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="window.location.href='lecturer-dashboard.html'">Lecturer Management</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Quizzes</a></li>
+        <li><a href="#">Materials</a></li>
+        <li><a href="#">Leaderboard</a></li>
+        <li><a href="#">Study Timer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="box-container">
+      <a href="Quiz-creation.html" class="green-box">Create Quiz</a>
+      <a href="Learning-Materials.html" class="green-box">Learning Materials</a>
+      <a href="Manage-Quiz.html" class="green-box">Manage Quiz</a>
+    </div>
+  </main>
+
+  <script>
+    // You can add any JavaScript functionality here if needed
+    document.querySelector('.logo').addEventListener('click', function() {
+      window.location.href = 'lecturer-dashboard.html';
+    });
+  </script>
+</body>
+</html>

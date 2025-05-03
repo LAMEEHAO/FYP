@@ -1,0 +1,27 @@
+[02-May-2025 18:07:52 Europe/Berlin] Received input: {"subject":"Mathematics","quizTitle":"s","questions":[{"question":"s","points":2,"options":["l","y","t","e"],"correctAnswerIndex":2}]}
+[02-May-2025 18:07:52 Europe/Berlin] Inserted quiz: s, ID: 21
+[02-May-2025 18:07:52 Europe/Berlin] Inserted question ID: 34, Text: s
+[02-May-2025 18:07:52 Europe/Berlin] Inserted option ID: 9, Text: l, is_correct: 0 for question ID: 34
+[02-May-2025 18:07:52 Europe/Berlin] Inserted option ID: 10, Text: y, is_correct: 0 for question ID: 34
+[02-May-2025 18:07:52 Europe/Berlin] Inserted option ID: 11, Text: t, is_correct: 1 for question ID: 34
+[02-May-2025 18:07:52 Europe/Berlin] Inserted option ID: 12, Text: e, is_correct: 0 for question ID: 34
+[02-May-2025 18:16:54 Europe/Berlin] Received input: {"subject":"Mathematics","quizTitle":"asa","questions":[{"question":"s","points":2,"options":["l","y","t","e"],"correctAnswerIndex":2}]}
+[02-May-2025 18:16:54 Europe/Berlin] Inserted quiz: asa, ID: 22
+[02-May-2025 18:16:54 Europe/Berlin] Inserted question ID: 35, Text: s
+[02-May-2025 18:16:54 Europe/Berlin] Inserted option ID: 13, Text: l, is_correct: 0 for question ID: 35
+[02-May-2025 18:16:54 Europe/Berlin] Inserted option ID: 14, Text: y, is_correct: 0 for question ID: 35
+[02-May-2025 18:16:54 Europe/Berlin] Inserted option ID: 15, Text: t, is_correct: 1 for question ID: 35
+[02-May-2025 18:16:54 Europe/Berlin] Inserted option ID: 16, Text: e, is_correct: 0 for question ID: 35
+[02-May-2025 18:25:41 Europe/Berlin] Received input: {"subject":"Mathematics","quizTitle":"sds","questions":[{"question":"s","points":2,"options":["l","y","t","e"],"correctAnswerIndex":2}]}
+[02-May-2025 18:25:41 Europe/Berlin] Inserted quiz: sds, ID: 23
+[02-May-2025 18:25:41 Europe/Berlin] Inserted question ID: 36, Text: s
+[02-May-2025 18:25:41 Europe/Berlin] Inserted option ID: 17, Text: l, is_correct: 0 for question ID: 36
+[02-May-2025 18:25:41 Europe/Berlin] Inserted option ID: 18, Text: y, is_correct: 0 for question ID: 36
+[02-May-2025 18:25:41 Europe/Berlin] Inserted option ID: 19, Text: t, is_correct: 1 for question ID: 36
+[02-May-2025 18:25:41 Europe/Berlin] Inserted option ID: 20, Text: e, is_correct: 0 for question ID: 36
+[03-May-2025 03:37:27 Europe/Berlin] Database connection error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[03-May-2025 03:37:32 Europe/Berlin] Database connection error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[03-May-2025 03:37:44 Europe/Berlin] Database connection error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[03-May-2025 03:37:48 Europe/Berlin] Database connection error: SQLSTATE[HY000] [2006] MySQL server has gone away
+[03-May-2025 05:24:22 Europe/Berlin] Database connection error: SQLSTATE[HY000] [1049] Unknown database 'quiz_creation'
+[03-May-2025 05:28:28 Europe/Berlin] PDO Error: SQLSTATE[42S02]: Base table or view not found: 1932 Table 'quiz_creation.subjects' doesn't exist in engine

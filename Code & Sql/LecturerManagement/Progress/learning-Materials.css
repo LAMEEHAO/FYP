@@ -1,0 +1,144 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .logo {
+    font-weight: bold;
+    color: #3a913f;
+    font-size: 1.5rem;
+    position: absolute; /* Keep logo on the left */
+    left: 3rem; /* Align with padding */
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  main {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 2rem;
+  }
+  
+  .materials-section {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .materials-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .material-card {
+    background-color: #daf7c3;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 8px 8px 0 #72b840;
+    text-align: left;
+    transition: transform 0.2s ease;
+    position: relative;
+  }
+  
+  .material-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .material-card h3 {
+    margin: 0;
+    color: #3a913f;
+    font-size: 1.1rem;
+  }
+  
+  .material-card a {
+    display: block;
+    margin-top: 0.5rem;
+    color: #1a6e22;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .material-card a:hover {
+    text-decoration: underline;
+  }
+  
+  .material-card input[type="checkbox"] {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+  }
+  
+  .material-card.delete-mode input[type="checkbox"] {
+    display: block;
+  }
+  
+  .add-material {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .add-material input {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #72b840;
+    width: 200px;
+  }
+  
+  .add-material button {
+    padding: 0.5rem 1rem;
+    background-color: #72b840;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .add-material button:hover {
+    background-color: #5ea631;
+  }
+  
+  #delete-material-btn {
+    background-color: #f44336;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+  
+  #delete-material-btn.delete-mode {
+    background-color: #c62828;
+  }
+  

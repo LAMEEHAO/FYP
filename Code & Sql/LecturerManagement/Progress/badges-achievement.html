@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Badges & Achievements</title>
+  <link rel="stylesheet" href="badges-achievement.css">
+  <script defer src="badges-achievement.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="lecturer-dashboard.html">Lecturer Management</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Quizzes</a></li>
+        <li><a href="#">Materials</a></li>
+        <li><a href="#">Leaderboard</a></li>
+        <li><a href="#">Study Timer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>🏅 Assign Badges & Achievements</h1>
+
+    <div class="badge-actions">
+      <div class="assign-badge">
+        <input type="text" id="student-name" placeholder="Student Name" />
+        <input type="number" id="student-score" placeholder="Score %" />
+        <select id="quiz-title" required>
+          <option value="" disabled selected>Select Quiz</option>
+          <!-- Quiz titles will be populated here -->
+        </select>
+        <button onclick="assignBadge()">➕ Assign Badge</button>
+      </div>
+      <button id="toggle-delete-mode" onclick="toggleDeleteMode()">🗑️</button>
+    </div>
+
+    <section class="badge-section">
+      <div id="badge-list" class="badge-list">
+        <!-- Badge list will go here -->
+      </div>
+    </section>
+  </main>
+</body>
+</html>
